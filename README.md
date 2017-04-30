@@ -1,6 +1,6 @@
 # parse-dat-url
 
-Node's `url.parse()` but updated to support versioned dat URLs.
+Node url.parse updated to support versioned dat URLs.
 
 ```js
 var parse = require('parse-dat-url')
