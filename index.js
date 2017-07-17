@@ -1,4 +1,4 @@
-const {parse} = require('url')
+const parse = typeof window === 'undefined' ? require('url').parse : browserParse
 
 const SCHEME_REGEX = /[a-z]+:\/\//i
 //                   1          2      3        4
@@ -21,4 +21,8 @@ module.exports = function parseDatURL (str, parseQS) {
   parsed.href = str // overwrite href to include actual original
   parsed.version = version // add version segment
   return parsed
+}
+
+function browserParse (str) {
+  return new URL(str)
 }
