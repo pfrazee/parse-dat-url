@@ -1,5 +1,5 @@
 const isNode = typeof window === 'undefined'
-const parse = isNode ? require('url').parse : browserParse
+const parse = require('url').parse
 
 const SCHEME_REGEX = /[a-z]+:\/\//i
 //                   1          2      3        4
@@ -24,6 +24,3 @@ module.exports = function parseDatURL (str, parseQS) {
   return parsed
 }
 
-function browserParse (str) {
-  return new URL(str)
-}
