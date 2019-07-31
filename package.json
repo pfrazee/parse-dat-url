@@ -1,6 +1,6 @@
 {
   "name": "parse-dat-url",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Node's url.parse() but updated to support versioned dat URLs.",
   "main": "index.js",
   "scripts": {
