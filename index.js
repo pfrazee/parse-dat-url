@@ -21,6 +21,9 @@ module.exports = function parseDatURL (str, parseQS) {
   }
   if (isNode) parsed.href = str // overwrite href to include actual original
   else parsed.path = parsed.pathname // to match node
+  if (!parsed.query && parsed.searchParams) {
+    parsed.query = Object.fromEntries(parsed.searchParams) // to match node
+  }
   parsed.version = version // add version segment
   return parsed
 }
